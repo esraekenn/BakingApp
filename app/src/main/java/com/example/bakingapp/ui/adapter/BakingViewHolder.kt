@@ -13,9 +13,10 @@ class BakingListViewHolder(container: ViewGroup) : RecyclerView.ViewHolder(
         R.layout.adapter_item_baking_list, container, false
     )
 ) {
-    val deneme: TextView = itemView.findViewById(R.id.txtdeneme)
+    val recipeName: TextView = itemView.findViewById(R.id.txt_recipe_name)
 
     fun bind(listDTO: ListDTO) {
-        deneme.text = listDTO.name
+        recipeName.text = listDTO.name
+
     }
 }
