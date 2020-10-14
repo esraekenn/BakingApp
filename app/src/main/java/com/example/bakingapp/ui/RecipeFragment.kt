@@ -11,8 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bakingapp.R
 import com.example.bakingapp.databinding.FragmentRecipeBinding
 import com.example.bakingapp.dto.BakingServiceProvider
-import com.example.bakingapp.dto.ListDTO
+import com.example.bakingapp.dto.Recipe
 import com.example.bakingapp.ui.adapter.BakingListAdapter
+import com.example.bakingapp.ui.adapter.RecipeDetailFragment
 import kotlinx.android.synthetic.main.fragment_recipe.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -37,25 +38,28 @@ class RecipeFragment : Fragment() {
         renderUI()
     }
 
-    fun renderUI() {
+    private fun renderUI() {
         val bakingServiceProvider = BakingServiceProvider()
-        bakingServiceProvider.BakingService().getBaking().enqueue(object : Callback<List<ListDTO>> {
-            override fun onFailure(call: Call<List<ListDTO>>, t: Throwable) {
+        bakingServiceProvider.BakingService().getBaking().enqueue(object : Callback<List<Recipe>> {
+            override fun onFailure(call: Call<List<Recipe>>, t: Throwable) {
                 Log.d("TAG", "Response = " + t.toString())
             }
 
-            override fun onResponse(call: Call<List<ListDTO>>, response: Response<List<ListDTO>>) {
+            override fun onResponse(call: Call<List<Recipe>>, response: Response<List<Recipe>>) {
                 rcList.layoutManager = LinearLayoutManager(activity)
-                val herolist = ArrayList(response.body()!!)
-                binding.rcList.adapter = BakingListAdapter(herolist)
-
+                val bakinglist = ArrayList(response.body()!!)
+                binding.rcList.adapter =
+                    BakingListAdapter(bakinglist) { recipe: Recipe, position: Int ->
+                        val recipeDetailFragment = RecipeDetailFragment()
+                        fragmentManager!!.beginTransaction()
+                            .replace(R.id.kase, recipeDetailFragment).commit()
+                    }
             }
-
         })
     }
 
-    companion object {
 
+    companion object {
         fun newInstance() = RecipeFragment()
     }
 }
