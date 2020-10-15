@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bakingapp.dto.Recipe
 
-class BakingListAdapter(
+class RecipeListAdapter(
     val recipeList: List<Recipe>,
     private val setOnClickListener: (recipe: Recipe, position: Int) -> Unit
 ) :

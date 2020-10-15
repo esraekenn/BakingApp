@@ -12,8 +12,7 @@ import com.example.bakingapp.R
 import com.example.bakingapp.databinding.FragmentRecipeBinding
 import com.example.bakingapp.dto.BakingServiceProvider
 import com.example.bakingapp.dto.Recipe
-import com.example.bakingapp.ui.adapter.BakingListAdapter
-import com.example.bakingapp.ui.adapter.RecipeDetailFragment
+import com.example.bakingapp.ui.adapter.RecipeListAdapter
 import kotlinx.android.synthetic.main.fragment_recipe.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -49,7 +48,7 @@ class RecipeFragment : Fragment() {
                 rcList.layoutManager = LinearLayoutManager(activity)
                 val bakinglist = ArrayList(response.body()!!)
                 binding.rcList.adapter =
-                    BakingListAdapter(bakinglist) { recipe: Recipe, position: Int ->
+                    RecipeListAdapter(bakinglist) { recipe: Recipe, position: Int ->
                         val recipeDetailFragment = RecipeDetailFragment()
                         fragmentManager!!.beginTransaction()
                             .replace(R.id.kase, recipeDetailFragment).commit()

@@ -6,22 +6,22 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bakingapp.R
-import com.example.bakingapp.dto.Recipe
+import com.example.bakingapp.dto.Steps
 
-class BakingListViewHolder(container: ViewGroup) : RecyclerView.ViewHolder(
+class RecipeDetailViewHolder(container: ViewGroup) : RecyclerView.ViewHolder(
     LayoutInflater.from(container.context).inflate
         (
-        R.layout.adapter_item_baking_list, container, false
+        R.layout.adapter_item_steps_list, container, false
     )
 ) {
     val recipeName: TextView = itemView.findViewById(R.id.txt_recipe_name)
     val recipeImage: ImageView = itemView.findViewById(R.id.img_recipe)
 
-    fun bind(recipe: Recipe, setOnClickListener: (recipe: Recipe, position: Int) -> Unit) {
-        recipeName.text = recipe.name
+    fun bind(steps: Steps, setOnClickListener: (steps: Steps, position: Int) -> Unit) {
+        recipeName.text = steps.description
         recipeImage.setImageResource(R.drawable.baking)
         itemView.setOnClickListener {
-            setOnClickListener(recipe, position)
+            setOnClickListener(steps, position)
         }
 
     }
