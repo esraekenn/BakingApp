@@ -4,16 +4,8 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="12dp">
-
-    <ImageView
-        android:id="@+id/img_recipe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="4dp" />
-
     <TextView
-        android:id="@+id/txt_recipe_name"
+        android:id="@+id/txt_step_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
