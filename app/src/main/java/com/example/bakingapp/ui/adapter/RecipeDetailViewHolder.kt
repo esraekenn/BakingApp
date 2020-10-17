@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bakingapp.R
-import com.example.bakingapp.dto.Steps
+import com.example.bakingapp.dto.Recipe
 
 class RecipeDetailViewHolder(container: ViewGroup) : RecyclerView.ViewHolder(
     LayoutInflater.from(container.context).inflate
@@ -14,8 +14,8 @@ class RecipeDetailViewHolder(container: ViewGroup) : RecyclerView.ViewHolder(
     )
 ) {
     val stepName: TextView = itemView.findViewById(R.id.txt_step_name)
-    fun bind(steps: Steps, setOnClickListener: (steps: Steps, position: Int) -> Unit) {
-        stepName.text = steps.shortDescription
+    fun bind(steps: Recipe, setOnClickListener: (steps: Recipe, position: Int) -> Unit) {
+        //  stepName.text = steps.steps!!
         itemView.setOnClickListener {
             setOnClickListener(steps, position)
         }
