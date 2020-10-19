@@ -5,8 +5,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bakingapp.dto.Recipe
 
 class RecipeDetailListAdapter(
-    val stepsList: List<Recipe>,
-    private val setOnClickListener: (stepsList: Recipe, position: Int) -> Unit
+    val recipeList: List<Recipe>,
+    private val setOnClickListener: (recipe: Recipe, position: Int) -> Unit
 ) :
     RecyclerView.Adapter<RecipeDetailViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeDetailViewHolder {
@@ -14,10 +14,10 @@ class RecipeDetailListAdapter(
     }
 
     override fun onBindViewHolder(holder: RecipeDetailViewHolder, position: Int) {
-        holder.bind(stepsList[position], setOnClickListener)
+        holder.bind(recipeList[position], setOnClickListener)
     }
 
     override fun getItemCount(): Int {
-        return stepsList.size
+        return recipeList.size
     }
 }

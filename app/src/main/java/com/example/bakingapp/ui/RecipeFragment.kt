@@ -49,7 +49,7 @@ class RecipeFragment : Fragment() {
                 val bakinglist = ArrayList(response.body()!!)
                 binding.rcList.adapter =
                     RecipeListAdapter(bakinglist) { recipe: Recipe, position: Int ->
-                        val recipeDetailFragment = RecipeDetailFragment()
+                        val recipeDetailFragment = RecipeDetailFragment(response)
                         fragmentManager!!.beginTransaction()
                             .replace(R.id.kase, recipeDetailFragment).commit()
                     }
