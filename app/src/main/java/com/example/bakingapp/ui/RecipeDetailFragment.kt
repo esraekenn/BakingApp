@@ -26,9 +26,10 @@ class RecipeDetailFragment(val data: Response<List<Recipe>>) : Fragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         renderUI()
+
     }
 
     private fun renderUI() {
@@ -39,7 +40,6 @@ class RecipeDetailFragment(val data: Response<List<Recipe>>) : Fragment() {
                 val recipeFragment = RecipeFragment()
                 fragmentManager!!.beginTransaction()
                     .replace(R.id.kase, recipeFragment).commit()
-
 
             }
     }

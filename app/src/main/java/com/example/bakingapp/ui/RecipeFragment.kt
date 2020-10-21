@@ -31,10 +31,10 @@ class RecipeFragment : Fragment() {
 
     }
 
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         renderUI()
+
     }
 
     private fun renderUI() {

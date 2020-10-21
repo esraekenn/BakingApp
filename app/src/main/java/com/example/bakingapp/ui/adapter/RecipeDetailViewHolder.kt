@@ -15,7 +15,7 @@ class RecipeDetailViewHolder(container: ViewGroup) : RecyclerView.ViewHolder(
 ) {
     val stepName: TextView = itemView.findViewById(R.id.txt_step_name)
     fun bind(recipe: Recipe, setOnClickListener: (recipe: Recipe, position: Int) -> Unit) {
-        stepName.text = recipe.steps?.get(position)?.shortDescription
+        stepName.text = recipe.steps?.get(position)?.description
         itemView.setOnClickListener {
             setOnClickListener(recipe, position)
         }
