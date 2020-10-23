@@ -26,10 +26,9 @@ class RecipeDetailFragment(val data: Response<List<Recipe>>) : Fragment() {
         return binding.root
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
         renderUI()
-
     }
 
     private fun renderUI() {
@@ -37,7 +36,7 @@ class RecipeDetailFragment(val data: Response<List<Recipe>>) : Fragment() {
         val bakinglist = ArrayList(data.body()!!)
         binding.rcList.adapter =
             RecipeDetailListAdapter(bakinglist) { recipe: Recipe, position: Int ->
-                val recipeFragment = RecipeFragment()
+                val recipeFragment = RecipeVideoFragment()
                 fragmentManager!!.beginTransaction()
                     .replace(R.id.kase, recipeFragment).commit()
 

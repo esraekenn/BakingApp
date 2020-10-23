@@ -8,10 +8,11 @@ android {
 
     defaultConfig {
         applicationId "com.example.bakingapp"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -24,8 +25,13 @@ android {
     }
     dataBinding
             {
-                enabled=true
+                enabled = true
             }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
 }
 
@@ -48,4 +54,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
     //Recyclerview
     implementation "androidx.recyclerview:recyclerview:1.2.0-alpha06"
+    //ExoPlayer
+    implementation 'com.google.android.exoplayer:exoplayer:2.12.0'
+
 }
