@@ -1,4 +1,4 @@
-package com.example.bakingapp.ui.adapter
+package com.example.bakingapp.ui.adapter.recipedetail
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

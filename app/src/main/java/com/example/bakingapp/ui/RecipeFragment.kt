@@ -12,7 +12,7 @@ import com.example.bakingapp.R
 import com.example.bakingapp.databinding.FragmentRecipeBinding
 import com.example.bakingapp.dto.BakingServiceProvider
 import com.example.bakingapp.dto.Recipe
-import com.example.bakingapp.ui.adapter.RecipeListAdapter
+import com.example.bakingapp.ui.adapter.recipe.RecipeListAdapter
 import kotlinx.android.synthetic.main.fragment_recipe.*
 import retrofit2.Call
 import retrofit2.Callback

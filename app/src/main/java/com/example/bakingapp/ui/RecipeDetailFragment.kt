@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bakingapp.R
 import com.example.bakingapp.databinding.FragmentDetailRecipeBinding
 import com.example.bakingapp.dto.Recipe
-import com.example.bakingapp.ui.adapter.RecipeDetailListAdapter
+import com.example.bakingapp.ui.adapter.recipedetail.RecipeDetailListAdapter
 import retrofit2.Response
 
 class RecipeDetailFragment(val data: Response<List<Recipe>>) : Fragment() {
